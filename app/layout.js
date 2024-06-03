@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="manifest" href="/public/manifest.json"/>
       </head>
-      <body className="bg-blue">{children}</body>
+      <body className=" h-screen bg-gradient-to-r from-gray-950 to-gray-500">{children}</body>
     </html>
   );
 }
