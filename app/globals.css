@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.bg-repeat {
+  width: 100%; /* Set the width to fill the container */
+  height: 100%; /* Set the height to fill the container */
+  background-repeat: repeat; /* Repeat the background image */
+}

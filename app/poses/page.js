@@ -7,7 +7,7 @@ const Tile = ({ imageUrl, title }) => (
       className="relative w-full h-full bg-cover bg-center transform transition-transform duration-500 hover:scale-105 rounded-3xl"
       style={{ backgroundImage: `url('${imageUrl}')` }}
     >
-      <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50 rounded-3xl">
+      <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50 rounded-3xl hover:bg-opacity-30  duration-500">
         <h2 className="text-white text-3xl font-bold">{title}</h2>
       </div>
     </div>

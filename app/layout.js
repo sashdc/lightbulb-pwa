@@ -17,7 +17,12 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="manifest" href="/public/manifest.json"/>
       </head>
-      <body className=" h-screen bg-gradient-to-r from-gray-950 to-gray-500">{children}</body>
+      <body className="h-screen bg-gradient-to-r from-gray-950 to-gray-500 overflow-hidden relative">
+        <div className="absolute inset-0 z-0">
+          <div className="bg-repeat" style={{ backgroundImage: 'url(/images/logoRepeat.png)', opacity: 0.1 }}></div>
+        </div>
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   );
 }
