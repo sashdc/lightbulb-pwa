@@ -14,11 +14,11 @@ const dosis = Dosis({
 
 export default function Home() {
   return (
-    <div className=" main-splash">
+    <div className=" main-splash flex  items-center justify-center h-screen  p-4">
       <Link href="/home" className="text-center">
         <div className="cursor-pointer">
-          <Image src={logo} alt="Lightbulb logo" className="mx-auto  size-1/6" />
-          <div className=" duration-700 text-center mt-4 hover:text-yellow-500 transition ease-in-out duration-700 hover:font-bold duration-700">
+          <Image src={logo} alt="Lightbulb logo" className="mx-auto  size-3/6" />
+          <div className=" duration-700 text-center mt-4 hover:text-yellow-500 transition ease-in-out  ">
             <h1 className={`${lifeSavers.className} text-6xl  `}>LightBulb</h1>
             <p className={`${dosis.className} mt-2`}>
               The posing guide for photographers
