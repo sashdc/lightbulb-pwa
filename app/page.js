@@ -14,9 +14,9 @@ const dosis = Dosis({
 
 export default function Home() {
   return (
-    <div className=" main-splash flex  items-center justify-center h-screen  p-4">
+    <div className=" main-splash flex  items-center justify-center h-screen  p-4 animate-in fade-in duration-1000">
       <Link href="/home" className="text-center">
-        <div className="cursor-pointer">
+        <div className="cursor-pointer bg-black/50 rounded-xl  py-10 ">
           <Image src={logo} alt="Lightbulb logo" className="mx-auto  size-3/6" />
           <div className=" duration-700 text-center mt-4 hover:text-yellow-500 transition ease-in-out  ">
             <h1 className={`${lifeSavers.className} text-6xl  `}>LightBulb</h1>

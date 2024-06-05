@@ -15,7 +15,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        'bounce': 'bounce 3s linear 1',
+      }
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate"),],
 };
