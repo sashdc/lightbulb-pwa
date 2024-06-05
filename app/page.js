@@ -1,16 +1,7 @@
 import Image from "next/image";
 import logo from "../public/images/lb-logo.png";
 import Link from "next/link";
-import { Life_Savers, Dosis } from "next/font/google";
-
-const lifeSavers = Life_Savers({
-  subsets: ["latin"],
-  weight: ["400", "700", "800"],
-});
-const dosis = Dosis({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+import { lifeSavers, dosis } from "./fonts";
 
 export default function Home() {
   return (

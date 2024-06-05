@@ -16,9 +16,16 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        'bounce': 'bounce 3s linear 1',
-      }
+        pulse: "pulse 8s infinite",
+        blink: "blink 6s infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: .6 },
+          "50%": { opacity: 0.1 },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate"),],
+  plugins: [require("tailwindcss-animate")],
 };
