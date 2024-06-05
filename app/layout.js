@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <link rel="manifest" href="/public/manifest.json"/>
       </head>
-      <body className="h-screen bg-gradient-to-r from-gray-950 via-gray-500 to-gray-950 overflow-hidden relative ">
+      <body className="bg-gradient-to-r from-gray-950 via-gray-500 to-gray-950  relative ">
         <div className="absolute inset-0 z-0">
           <div className="bg-repeat animate-blink" style={{ backgroundImage: 'url(/images/logoRepeat.png)', opacity: 0.1 }}></div>
         </div>
