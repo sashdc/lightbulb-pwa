@@ -13,6 +13,9 @@ import {  dosis } from "../fonts";
 
 export default function EngagementGallery() {
   const [index, setIndex] = React.useState(-1);
+  const [showToggle, setShowToggle] = React.useState(false);
+  const [descriptionTextAlign, setDescriptionTextAlign] = React.useState("center");
+  const [descriptionMaxLines, setDescriptionMaxLines] = React.useState(6);
 
   const slides = engagementPhotos.map((photo) => ({
     src: photo.src,
@@ -34,6 +37,7 @@ export default function EngagementGallery() {
         <Lightbox
           index={index}
           plugins={[Captions]}
+          captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
           descriptionTextAlign="center"
           slides={slides}
           open={index >= 0}
