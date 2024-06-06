@@ -8,32 +8,31 @@ import { engagementPhotos } from "@/public/images/engagement/engagement";
 import Link from "next/link";
 import "yet-another-react-lightbox/plugins/captions.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
-import {  dosis } from "../fonts";
-
+import { dosis } from "../fonts";
 
 export default function EngagementGallery() {
   const [index, setIndex] = React.useState(-1);
-  const [showToggle, setShowToggle] = React.useState(false);
-  const [descriptionTextAlign, setDescriptionTextAlign] = React.useState("center");
-  const [descriptionMaxLines, setDescriptionMaxLines] = React.useState(6);
+  const showToggle = false;
+  const descriptionTextAlign = "center";
+  const descriptionMaxLines = 6;
 
   const slides = engagementPhotos.map((photo) => ({
     src: photo.src,
-    // title: photo.title,
     description: photo.description,
   }));
 
   return (
-    <div className=" flex flex-col items-center justify-center  p-10  ">
-        <h1 className={`${dosis.className} text-4xl font-bold text-center bg-black/20 rounded-t-xl px-4 pt-1 `}>Engagement Poses</h1>
-      <div className=" p-10 animate-in fade-in duration-1000 bg-black/20 rounded-xl ">
+    <div className="flex flex-col items-center justify-center p-10">
+      <h1 className={`${dosis.className} text-4xl font-bold text-center bg-black/20 rounded-t-xl px-4 pt-1`}>
+        Engagement Poses
+      </h1>
+      <div className="p-10 animate-in fade-in duration-1000 bg-black/20 rounded-xl">
         <PhotoAlbum
           layout="columns"
           photos={engagementPhotos}
           targetRowHeight={150}
           onClick={({ index: current }) => setIndex(current)}
         />
-
         <Lightbox
           index={index}
           plugins={[Captions]}
@@ -43,14 +42,21 @@ export default function EngagementGallery() {
           open={index >= 0}
           close={() => setIndex(-1)}
         />
-       <Link href="/poses">
-          <button className="invisible  ">Back</button>
-        </Link>
-       
+          <Link href="/poses">
+        <button className="invisible text-blue-500 text-2xl font-bold bg-black/20 rounded-b-xl px-4 pb-1">
+          Back
+        </button>
+      </Link>
       </div>
-      <Link href="/poses">
-          <button className="text-blue-500 text-2xl font-bold bg-black/20 rounded-b-xl px-4 pb-1">Back</button>
+    
+
+      <div className="fixed top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 hover:translate-x-0 transition-transform duration-300">
+        <Link href="/poses">
+          <button className={`${dosis.className} bg-red-950 text-white text-lg py-2 px-4 rounded-r-lg`}>
+            Back
+          </button>
         </Link>
+      </div>
     </div>
   );
 }
