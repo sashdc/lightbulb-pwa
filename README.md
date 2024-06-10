@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lightbulb - Posing Guide for Photographers
 
-## Getting Started
+Welcome to **Lightbulb**, an innovative posing guide app designed to assist photographers in capturing the perfect shot for weddings, engagements, family portraits, and boudoir shoots. Built with Next.js, Lightbulb offers a comprehensive set of tools and inspirations to elevate your photography sessions.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Posing Categories**: Easily navigate through various categories including weddings, engagements, family portraits, and boudoir shoots.
+- **Detailed Pose Descriptions**: Each pose is accompanied by a detailed description to help you understand the nuances.
+- **Visual Inspirations**: High-quality images for each pose to give you a clear visual reference.
+- **User-Friendly Interface**: Intuitive design ensuring smooth navigation and ease of use.
+- **Favorites**: Save your favorite poses for quick access during shoots.
+- **Offline Access**: Download poses and use the app even without an internet connection.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To get started with Lightbulb, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/sashdc/lightbulb.git
+    ```
 
-## Learn More
+2. **Navigate to the project directory**:
+    ```sh
+    cd lightbulb
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Install the dependencies**:
+    ```sh
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Run the development server**:
+    ```sh
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+1. **Select a Category**: Choose from weddings, engagements, family portraits, or boudoir shoots.
+2. **Browse Poses**: Scroll through the list of poses, each with detailed descriptions and images.
+3. **Mark Favorites**: Click the star icon to save poses for easy access later.
+4. **Offline Access**: Download poses to use them without an internet connection.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We welcome contributions to improve Lightbulb. If you have suggestions for new features, bug reports, or code improvements, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+## License
+
+Lightbulb is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+For any questions or suggestions, please contact Saharsh Cherian at [saharsh@example.com](mailto:saharsh@example.com).
+
+## Acknowledgments
+
+Special thanks to all the photographers who provided invaluable feedback during the development of this app.
+
+---
+
+Built by Saharsh Cherian.
+
+GitHub: [sashdc](https://github.com/sashdc)
