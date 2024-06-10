@@ -22,7 +22,9 @@ module.exports = {
       keyframes: {
         blink: {
           "0%, 100%": { opacity: .6 },
-          "50%": { opacity: 0.1 },
+          "25%": { opacity: 0.025 },
+          "75%": { opacity: 0.1 },
+          "50%": { opacity: 0.3 },
         },
       },
     },
