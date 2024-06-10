@@ -43,4 +43,6 @@ body {
 .yarl__slide_description{
  font-size: x-large;
  font-weight: bold;
+ width: 30%;
+  margin: 0 auto;
 }

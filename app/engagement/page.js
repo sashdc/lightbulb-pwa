@@ -16,19 +16,23 @@ export default function EngagementGallery() {
   const descriptionTextAlign = "center";
   const descriptionMaxLines = 6;
 
+  const addLineBreaks = (description) => {
+    return description.split(".").join("\n");
+  };
+
   const slides = engagementPhotos.map((photo) => ({
     src: photo.src,
-    description: photo.description,
+    description: addLineBreaks(photo.description),
   }));
 
   return (
-    <div className="flex flex-col items-center justify-center p-10">
+    <div className="flex flex-col items-center justify-center p-4">
       <h1
-        className={`${dosis.className} text-4xl font-bold text-center bg-black/20 rounded-t-xl px-4 pt-1`}
+        className={`${dosis.className} text-4xl font-bold text-center bg-black/20 rounded-t-xl px-4 `}
       >
         Engagement Poses
       </h1>
-      <div className="lg:p-8 animate-in fade-in duration-1000 bg-black/20 rounded-xl">
+      <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl">
         <PhotoAlbum
           layout="columns"
           photos={engagementPhotos}
