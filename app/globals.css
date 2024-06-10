@@ -38,3 +38,9 @@ body {
   height: 100%; /* Set the height to fill the container */
   background-repeat: repeat; /* Repeat the background image */
 }
+
+
+.yarl__slide_description{
+ font-size: x-large;
+ font-weight: bold;
+}
