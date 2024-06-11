@@ -46,3 +46,15 @@ body {
  width: 30%;
   margin: 0 auto;
 }
+
+.react-photo-album--photo{
+  border-radius: 0px;
+  transition: ease-in-out 0.5s;
+}
+
+.react-photo-album--photo:hover{
+  transform: scale(1.025);
+  transition: transform 0.5s;
+  border-radius: 20px;
+  transition: ease-in-out 0.5s;
+}
