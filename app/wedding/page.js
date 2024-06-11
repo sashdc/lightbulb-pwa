@@ -1,5 +1,5 @@
 export default function Wedding() {
     return (
-        <div>Wedding</div>
+        <div className="h-screen">Wedding</div>
     );
 }

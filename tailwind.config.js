@@ -16,7 +16,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        pulse: "pulse 8s infinite",
+        pulse: "pulse 2s infinite",
         blink: "blink 6s infinite",
       },
       keyframes: {

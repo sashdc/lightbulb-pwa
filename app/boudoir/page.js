@@ -1,5 +1,5 @@
 export default function Boudoir() {
     return (
-        <div>Boudoir</div>
+        <div className="h-screen">Boudoir</div>
     );
 }
