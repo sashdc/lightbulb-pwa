@@ -47,11 +47,11 @@ function Gallery({ photos, title, backLink }) {
       >
         {title}
       </h1>
-      <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl z-50">
-        <div className="fixed top-5 left-0 ">
+      <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl ">
+        <div className="fixed top-1/4 right-0 z-50">
           <button
             onClick={handleRandomize}
-            className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-r-lg hover:font-bold transition duration-1000"
+            className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-l-lg hover:font-bold transition duration-1000"
           >
             Randomize
           </button>
