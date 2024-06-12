@@ -1,10 +1,12 @@
-import BackButton from "../ui/backbutton/backbutton";
+import Gallery from "../ui/galleryPage/galleryPage";
+import { weddingPhotos } from "@/public/images/wedding/wedding";
 
 export default function Wedding() {
     return (
-        <div>
-        <div className="h-screen">Wedding</div>
-        <BackButton backLocation="/poses" />
-        </div>
+        <Gallery
+        photos={weddingPhotos}
+        title="Wedding Poses"
+        backLink="/poses"
+      />
     );
 }

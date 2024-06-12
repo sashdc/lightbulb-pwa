@@ -6,7 +6,7 @@ import { lifeSavers, dosis } from "./fonts";
 export default function Home() {
   return (
     <div className=" main-splash flex  items-center justify-center h-screen  p-4 animate-in fade-in duration-1000">
-      <Link href="/home" className="text-center">
+      <Link href="/poses" className="text-center">
         <div className="cursor-pointer bg-black/50 rounded-xl  py-10 ">
           <Image
             src={logo}

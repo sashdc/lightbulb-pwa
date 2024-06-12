@@ -3,7 +3,7 @@ import { dosis } from "../../fonts";
 
 export default function BackButton({ backLocation }) {
   return (
-    <div className="w-4/5 h-16 flex items-center justify-center">
+    <div className="h-16 flex items-center justify-center">
       <Link href={backLocation}>
         <button
           type="button"

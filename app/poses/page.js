@@ -17,7 +17,7 @@ export default function Poses() {
 
         <Tile imageUrl="/images/boudoir.webp" title="BOUDOIR" link="/boudoir" />
       </div>
-      <BackButton backLocation="/home" />
+      <BackButton backLocation="/" />
     </div>
   );
 }
