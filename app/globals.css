@@ -41,10 +41,18 @@ body {
 
 
 .yarl__slide_description{
- font-size: x-large;
+ font-size: large;
  font-weight: bold;
  width: 30%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .yarl__slide_description{
+    width: 100%;
+    font-size: medium;
+  }
+  
 }
 
 .react-photo-album--photo{

@@ -9,7 +9,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import { dosis } from "../../fonts";
 import BackButton from "../backbutton/backbutton";
 import BackButton2 from "../backbutton/backbutton2";
-
+import Share from "yet-another-react-lightbox/plugins/share";
 // Function to shuffle an array
 const shuffleArray = (array) => {
   let newArray = [...array];
@@ -48,10 +48,10 @@ function Gallery({ photos, title, backLink }) {
         {title}
       </h1>
       <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl ">
-        <div className="fixed top-1/4 right-0 z-50">
+        <div className="fixed top-1/4 right-0 z-50 transform lg:translate-x-1/2 lg:hover:translate-x-0 transition-transform duration-300">
           <button
             onClick={handleRandomize}
-            className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-l-lg hover:font-bold transition duration-1000"
+            className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-l-lg  transition duration-1000"
           >
             Randomize
           </button>
@@ -64,7 +64,7 @@ function Gallery({ photos, title, backLink }) {
         />
         <Lightbox
           index={index}
-          plugins={[Captions]}
+          plugins={[Captions, Share]}
           captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
           slides={slides}
           open={index >= 0}
