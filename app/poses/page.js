@@ -1,7 +1,5 @@
-
 import BackButton from "../ui/backbutton/backbutton2";
 import Tile from "../ui/menuTile/menuTile";
-
 
 export default function Poses() {
   return (

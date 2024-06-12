@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Tile from "../ui/menuTile/menuTile";
 import BackButton from "../ui/backbutton/backbutton2";
 

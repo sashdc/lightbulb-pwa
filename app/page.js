@@ -2,7 +2,6 @@ import Image from "next/image";
 import logo from "../public/images/lb-logo.png";
 import Link from "next/link";
 import { lifeSavers, dosis } from "./fonts";
-// import BackButton from "./ui/backbutton/backbutton";
 
 export default function Home() {
   return (
@@ -12,9 +11,9 @@ export default function Home() {
           <Image
             src={logo}
             alt="Lightbulb logo"
-            className="mx-auto  size-3/6 animate-pulse"
+            className="mx-auto  size-3/6 hover:drop-shadow-glow transition ease-in-out duration-500"
           />
-          <div className=" duration-700 text-center mt-4 hover:text-yellow-500 transition ease-in-out  ">
+          <div className=" duration-700 text-center mt-4 hover:text-yellow-500  hover:drop-shadow-glow transition ease-in-out  ">
             <h1 className={`${lifeSavers.className} text-6xl  `}>LightBulb</h1>
             <p className={`${dosis.className} mt-2`}>
               The posing guide for photographers
