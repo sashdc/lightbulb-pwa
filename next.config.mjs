@@ -1,24 +1,15 @@
 // next.config.mjs
+import withPWA from 'next-pwa';
 
 const nextConfig = {
   reactStrictMode: true,
   // other Next.js config options here
 };
 
-const withPWA = require("@ducanh2912/next-pwa").default({
-  dest: "public",
-  cacheOnFrontEndNav: true,
-  aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
-  swcMinify: true,
-  disable: process.env.NODE_ENV === "development",
-  workboxOptions: {
-    disableDevLogs: true,
-  },
-  // ... other options you like
-});
-
-
-
-
-module.exports = withPWA(nextConfig);
+export default withPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development', // disable PWA in development
+  register: true,
+  skipWaiting: true,
+  buildExcludes: [/middleware-manifest.json$/], // avoid middleware manifest in service worker
+})(nextConfig);
