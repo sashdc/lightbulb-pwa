@@ -6,7 +6,7 @@ const nextConfig = {
   // other Next.js config options here
 };
 
-export default withPWA({
+const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
@@ -16,4 +16,10 @@ export default withPWA({
   workboxOptions: {
     disableDevLogs: true,
   },
-})(nextConfig);
+  // ... other options you like
+});
+
+
+
+
+module.exports = withPWA(nextConfig);
