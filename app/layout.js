@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <link rel="manifest" href="/public/manifest.json"/>
+        <link rel="manifest" href="/manifest.json"/>
         <link rel="icon" href="./favicon.png" sizes="any" />
         </head>
       <body className="bg-gradient-to-r from-gray-950 via-gray-500 to-gray-950  relative ">
