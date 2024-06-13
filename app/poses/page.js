@@ -3,7 +3,7 @@ import Tile from "../ui/menuTile/menuTile";
 
 export default function Poses() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 ">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-0 ">
       <div className="grid grid-cols-1 md:grid-cols-2  gap-10 w-full max-w-screen-lg ">
         <Tile imageUrl="/images/wedding.webp" title="WEDDING" link="/wedding" />
 
