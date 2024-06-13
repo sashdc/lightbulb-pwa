@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <meta name="theme-color" content="#317EFB"/>
+        <meta name="theme-color" content="#030712"/>
 
         <link rel="manifest" href="/manifest.json"/>
         <link rel="icon" href="./favicon.png" sizes="any" />

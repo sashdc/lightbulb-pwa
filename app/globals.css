@@ -64,6 +64,27 @@ body {
   transform: scale(1.025);
   transition: transform 0.5s;
   border-radius: 20px;
-  transition: ease-in-out 0.5s;
 }
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 10px;
+  
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(118, 116, 116)280;
+}
+
 
