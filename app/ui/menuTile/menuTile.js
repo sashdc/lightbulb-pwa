@@ -10,7 +10,7 @@ const Tile = ({ imageUrl, title, link }) => (
     >
       <Link href={link}>
         <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50 rounded-3xl hover:bg-opacity-30 duration-500">
-          <h2 className={`text-slate-200 text-5xl font-bold bg-slate-500/25 p-1 px-2 rounded-lg shadow-md hover:bg-slate-500/75 duration-500 ${dosis.className}`}>
+          <h2 className={`text-slate-200 text-4xl md:text-5xl font-bold bg-slate-500/25 p-1 px-2 rounded-lg shadow-md hover:bg-slate-500/75 duration-500 ${dosis.className}`}>
             {title}
           </h2>
         </div>

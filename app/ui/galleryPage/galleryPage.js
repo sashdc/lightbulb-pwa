@@ -7,9 +7,11 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import { dosis } from "../../fonts";
-import BackButton from "../backbutton/backbutton";
+import BackButton from "../backbutton/backButtonFloat";
 import BackButton2 from "../backbutton/backbutton2";
 import Share from "yet-another-react-lightbox/plugins/share";
+
+
 // Function to shuffle an array
 const shuffleArray = (array) => {
   let newArray = [...array];

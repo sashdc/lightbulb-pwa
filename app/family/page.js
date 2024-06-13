@@ -1,4 +1,4 @@
-import BackButton from "../ui/backbutton/backbutton";
+import BackButton from "../ui/backbutton/backButtonFloat";
 
 export default function Family() {
     return (
