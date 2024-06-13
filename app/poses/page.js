@@ -15,7 +15,7 @@ export default function Poses() {
 
         <Tile imageUrl="/images/family.webp" title="FAMILY" link="/family" />
 
-        <Tile imageUrl="/images/boudoir.webp" title="BOUDOIR" link="/boudoir" />
+        {/* <Tile imageUrl="/images/boudoir.webp" title="BOUDOIR" link="/boudoir" /> */}
       </div>
       <BackButton backLocation="/" />
     </div>
