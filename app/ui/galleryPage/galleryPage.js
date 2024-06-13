@@ -10,17 +10,7 @@ import { dosis } from "../../fonts";
 import BackButton from "../backbutton/backButtonFloat";
 import BackButton2 from "../backbutton/backbutton2";
 import Share from "yet-another-react-lightbox/plugins/share";
-
-
-// Function to shuffle an array
-const shuffleArray = (array) => {
-  let newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-};
+import RandomizeButton from "../randomize/randomize";
 
 function Gallery({ photos, title, backLink }) {
   const [index, setIndex] = React.useState(-1);
@@ -38,10 +28,6 @@ function Gallery({ photos, title, backLink }) {
     description: addLineBreaks(photo.description),
   }));
 
-  const handleRandomize = () => {
-    setShuffledPhotos(shuffleArray(photos));
-  };
-
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <h1
@@ -49,15 +35,8 @@ function Gallery({ photos, title, backLink }) {
       >
         {title}
       </h1>
-      <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl ">
-        <div className="fixed top-1/4 right-0 z-50 transform lg:translate-x-1/2 lg:hover:translate-x-0 transition-transform duration-300">
-          <button
-            onClick={handleRandomize}
-            className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-l-lg  transition duration-1000"
-          >
-            Randomize
-          </button>
-        </div>
+      <div className="lg:p-6 p-2 animate-in fade-in duration-1000 bg-black/20 rounded-xl">
+        <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
         <PhotoAlbum
           layout="columns"
           photos={shuffledPhotos}
