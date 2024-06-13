@@ -29,14 +29,17 @@ function Gallery({ photos, title, backLink }) {
   }));
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 pb-0">
+    <div className="flex flex-col items-center justify-center p-4 pb-0 pt-1 lg:pt-3">
+              <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
+              <BackButton backLocation={backLink} />
+
+
       <h1
         className={`${dosis.className} text-5xl font-bold text-center animate-in fade-in duration-1000`}
       >
         {title}
       </h1>
-      <div className="lg:p-6 p-2 pb-0 lg:pb-0 animate-in fade-in duration-1000 ">
-        <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
+      <div className="lg:p-6 p-2 pb-0 pt-0 lg:pb-0 animate-in fade-in duration-1000 ">
         <PhotoAlbum
           layout="columns"
           photos={shuffledPhotos}
@@ -52,7 +55,6 @@ function Gallery({ photos, title, backLink }) {
           close={() => setIndex(-1)}
         />
         <BackButton2 backLocation={backLink} />
-        <BackButton backLocation={backLink} />
       </div>
     </div>
   );

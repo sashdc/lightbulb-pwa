@@ -18,10 +18,10 @@ function RandomizeButton({ photos, setShuffledPhotos }) {
   };
 
   return (
-    <div className="fixed top-1/4 right-0 z-50 transform lg:translate-x-1/2 lg:hover:translate-x-0 transition-transform duration-300">
+    <div className="fixed top-1/4 right-0 z-50 transform lg:translate-x-1/2 lg:hover:translate-x-0 transition-transform duration-300 shadow-md">
       <button
         onClick={handleRandomize}
-        className="bg-red-900 text-white text-lg font-semibold py-2 px-4 rounded-l-lg transition duration-1000"
+        className="bg-red-900 text-white text-lg font-semibold py-1 px-2 lg:py-2 lg:px-4 rounded-l-lg transition duration-1000"
       >
         Randomize
       </button>
