@@ -1,0 +1,101 @@
+/* src/Lightbox.css */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minmax value as needed */
+    grid-gap: 15px; /* Adjust the gap between items */ 
+}
+
+.thumbnail {
+    width: 100%; /* Ensure all thumbnails have the same width */
+    height: auto; /* Allow images to determine their own height */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Add shadow for a polished look */
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+
+.thumbnail:hover {
+    outline: 4px solid #ccc; /* Optional: Change border color on hover */
+    outline-offset: -4px;
+    border-radius: 10px;
+    transform: scale(1.05); /* Optional: Scale the image on hover */
+}
+
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Ensure the image fits within the lightbox */
+}
+
+.lightbox-controls {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.heart.favorited {
+    color: red;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns for smaller screens */
+        grid-gap: 10px; /* Adjust gap for smaller screens */
+    }
+}

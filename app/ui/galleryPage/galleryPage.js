@@ -11,6 +11,7 @@ import BackButton from "../backbutton/backButtonFloat";
 import BackButton2 from "../backbutton/backbutton2";
 import Share from "yet-another-react-lightbox/plugins/share";
 import RandomizeButton from "../randomize/randomize";
+import Favourite from "../favourite/favourite"; 
 
 function Gallery({ photos, title, backLink }) {
   const [index, setIndex] = React.useState(-1);
@@ -30,9 +31,8 @@ function Gallery({ photos, title, backLink }) {
 
   return (
     <div className="flex flex-col items-center justify-center p-4 pb-0 pt-1 lg:pt-3">
-              <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
-              <BackButton backLocation={backLink} />
-
+      <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
+      <BackButton backLocation={backLink} />
 
       <h1
         className={`${dosis.className} text-5xl font-bold text-center animate-in fade-in duration-1000`}
@@ -45,6 +45,14 @@ function Gallery({ photos, title, backLink }) {
           photos={shuffledPhotos}
           targetRowHeight={150}
           onClick={({ index: current }) => setIndex(current)}
+          renderPhoto={({ photo, layout, imageProps }) => (
+            <div style={{ position: 'relative' }}>
+              <img {...imageProps} />
+              <div style={{ position: 'absolute', top: '10px', right: '10px' }}>
+                <Favourite photo={photo} />
+              </div>
+            </div>
+          )}
         />
         <Lightbox
           index={index}
