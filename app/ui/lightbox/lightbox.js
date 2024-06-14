@@ -1,7 +1,7 @@
 // src/Lightbox.js
 
 import React, { useState, useEffect } from "react";
-import "./Lightbox.css";
+import "./lightbox.css";
 import Image from "next/image";
 
 const Lightbox = ({ images, isOpen, onClose }) => {
