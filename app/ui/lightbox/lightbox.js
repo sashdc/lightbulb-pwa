@@ -1,7 +1,8 @@
 // src/Lightbox.js
 
-import React, { useState, useEffect } from 'react';
-import './Lightbox.css';
+import React, { useState, useEffect } from "react";
+import "./Lightbox.css";
+import Image from "next/image";
 
 const Lightbox = ({ images, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,31 +10,31 @@ const Lightbox = ({ images, isOpen, onClose }) => {
 
   useEffect(() => {
     // Retrieve favorites from local storage when the component mounts
-    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
   }, []);
 
   useEffect(() => {
     if (isOpen) {
       const handleKeyDown = (event) => {
-        if (event.key === 'ArrowRight') {
+        if (event.key === "ArrowRight") {
           handleNext();
-        } else if (event.key === 'ArrowLeft') {
+        } else if (event.key === "ArrowLeft") {
           handlePrev();
-        } else if (event.key === 'Escape') {
+        } else if (event.key === "Escape") {
           onClose();
         }
       };
-      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
       return () => {
-        window.removeEventListener('keydown', handleKeyDown);
+        window.removeEventListener("keydown", handleKeyDown);
       };
     }
   }, [isOpen, currentIndex]);
 
   useEffect(() => {
     // Save favorites to local storage whenever the favorites array changes
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
   if (!isOpen) return null;
@@ -50,30 +51,48 @@ const Lightbox = ({ images, isOpen, onClose }) => {
 
   const handleFavorite = () => {
     if (favorites.includes(currentImage.src)) {
-      setFavorites(favorites.filter(fav => fav !== currentImage.src));
+      setFavorites(favorites.filter((fav) => fav !== currentImage.src));
       console.log(favorites);
     } else {
       setFavorites([...favorites, currentImage.src]);
-              console.log(favorites);
-
+      console.log(favorites);
     }
   };
 
   const handleClickOutside = (event) => {
-    if (event.target.className === 'lightbox-content') {
+    if (event.target.className === "lightbox-content") {
       onClose();
     }
   };
 
   return (
-    <div className="lightbox" onClick={handleClickOutside}>
-      <div className="lightbox-content">
-        <span className="close" onClick={onClose}>&times;</span>
-        <button onClick={handleFavorite} className={`heart ${favorites.includes(currentImage.src) ? 'favorited' : ''}`}>&hearts;</button>
-        <img src={currentImage.src} alt={currentImage.alt} className="lightbox-image" />
+    <div className="lightbox " onClick={handleClickOutside}>
+      <div className="lightbox-content ">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
+        <button
+          onClick={handleFavorite}
+          className={`heart ${
+            favorites.includes(currentImage.src) ? "favorited" : ""
+          }`}
+        >
+          &hearts;
+        </button>
+        <Image
+          src={currentImage.src}
+          alt={currentImage.alt}
+          width={currentImage.width}
+          height={currentImage.height}
+          className="lightbox-image "
+        />
         <div className="lightbox-controls">
-          <button onClick={handlePrev} className="arrow left">&lt;</button>
-          <button onClick={handleNext} className="arrow right">&gt;</button>
+          <button onClick={handlePrev} className="arrow left">
+            &lt;
+          </button>
+          <button onClick={handleNext} className="arrow right">
+            &gt;
+          </button>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import BackButton from "../ui/backbutton/backButtonFloat";
 import React, { useState } from 'react';
 import Lightbox from '../ui/lightbox/lightbox';
 import { engagementPhotos } from "@/public/images/engagement/engagement";
+import Image from "next/image";
 
 export default function Family() {
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -21,8 +22,10 @@ export default function Family() {
         <h1>Image Gallery</h1>
         <div className="gallery animate-in fade-in-0">
           {photos.map((photo, index) => (
-            <img
+            <Image
               key={index}
+              width={photo.width}
+              height={photo.height}
               src={photo.src}
               alt={photo.alt}
               onClick={() => setLightboxOpen(true)}
