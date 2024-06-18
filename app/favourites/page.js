@@ -10,7 +10,10 @@ export default function FavouritesGallery() {
     //     return storedFavourites;
     // });
 
-    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    if (typeof window !== 'undefined') {
+        const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    }
+    // const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
   
     // useEffect(() => {
