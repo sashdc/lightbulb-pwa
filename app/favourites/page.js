@@ -11,18 +11,18 @@ export default function FavouritesGallery() {
     });
 
   
-    useEffect(() => {
-        const handleStorageChange = () => {
-            const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
-            setFavourites(storedFavourites);
-        };
+    // useEffect(() => {
+    //     const handleStorageChange = () => {
+    //         const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    //         setFavourites(storedFavourites);
+    //     };
 
-        window.addEventListener('storage', handleStorageChange);
+    //     window.addEventListener('storage', handleStorageChange);
 
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('storage', handleStorageChange);
+    //     };
+    // }, []);
 
     return (
       <Gallery
