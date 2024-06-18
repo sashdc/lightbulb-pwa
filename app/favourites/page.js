@@ -1,26 +1,34 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Gallery from "../ui/galleryPage/galleryPage";
 
 export default function FavouritesGallery() {
-    const [favourites, setFavourites] = useState([]);
+    // Initialize favourites state with the stored favourites from localStorage
+    const [favourites, setFavourites] = useState(() => {
+        const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
+        return storedFavourites;
+    });
 
-    
+  
     useEffect(() => {
-      const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
-      setFavourites(storedFavourites);
-      console.log(storedFavourites);
+        const handleStorageChange = () => {
+            const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
+            setFavourites(storedFavourites);
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
     }, []);
 
     return (
-        <>
       <Gallery
         photos={favourites}
         title="Favourite Poses"
         backLink="/poses"
       />
- 
-      </>
     );
 }

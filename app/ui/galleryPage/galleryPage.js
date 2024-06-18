@@ -11,7 +11,7 @@ import BackButton from "../backbutton/backButtonFloat";
 import BackButton2 from "../backbutton/backbutton2";
 import Share from "yet-another-react-lightbox/plugins/share";
 import RandomizeButton from "../randomize/randomize";
-import Favourite from "../favourite/favourite"; 
+import Favourite from "../favourite/favourite";
 
 function Gallery({ photos, title, backLink }) {
   const [index, setIndex] = React.useState(-1);
@@ -46,9 +46,9 @@ function Gallery({ photos, title, backLink }) {
           targetRowHeight={150}
           onClick={({ index: current }) => setIndex(current)}
           renderPhoto={({ photo, layout, imageProps }) => (
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: "relative" }}>
               <img {...imageProps} />
-              <div style={{ position: 'absolute', top: '10px', right: '10px' }}>
+              <div style={{ position: "absolute", top: "10px", right: "10px" }}>
                 <Favourite photo={photo} />
               </div>
             </div>

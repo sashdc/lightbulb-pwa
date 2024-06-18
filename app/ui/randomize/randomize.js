@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-
 // Function to shuffle an array
 const shuffleArray = (array) => {
   let newArray = [...array];
