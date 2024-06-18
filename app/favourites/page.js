@@ -13,6 +13,10 @@ export default function FavouritesGallery() {
     if (typeof window !== 'undefined') {
         const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
     }
+    else {
+        const favourites = [];
+    }
+
     // const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
   
