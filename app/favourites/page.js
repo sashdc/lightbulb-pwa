@@ -10,28 +10,17 @@ export default function FavouritesGallery() {
     //     return storedFavourites;
     // });
 
+    // if (typeof window !== 'undefined') {
+    //     const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    // }
+    // else {
+    //     const favourites = [];
+    // }
+    const favourites = []
     if (typeof window !== 'undefined') {
-        const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    favourites = JSON.parse(localStorage.getItem("favourites")) || [];
     }
-    else {
-        const favourites = [];
-    }
-
-    // const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-
   
-    // useEffect(() => {
-    //     const handleStorageChange = () => {
-    //         const storedFavourites = JSON.parse(localStorage.getItem("favourites")) || [];
-    //         setFavourites(storedFavourites);
-    //     };
-
-    //     window.addEventListener('storage', handleStorageChange);
-
-    //     return () => {
-    //         window.removeEventListener('storage', handleStorageChange);
-    //     };
-    // }, []);
 
     return (
       <Gallery
