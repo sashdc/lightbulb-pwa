@@ -35,7 +35,7 @@ function Gallery({ photos, title, backLink }) {
       <BackButton backLocation={backLink} />
 
       <h1
-        className={`${dosis.className} text-5xl font-bold text-center animate-in fade-in duration-1000`}
+        className={`${dosis.className} text-5xl pb-3 lg:pb-0 font-bold text-center animate-in fade-in duration-1000`}
       >
         {title}
       </h1>

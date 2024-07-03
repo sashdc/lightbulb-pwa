@@ -16,7 +16,7 @@ export default function FavouritesGallery() {
     // else {
     //     const favourites = [];
     // }
-    const favourites = []
+    let favourites = []
     if (typeof window !== 'undefined') {
     favourites = JSON.parse(localStorage.getItem("favourites")) || [];
     }
