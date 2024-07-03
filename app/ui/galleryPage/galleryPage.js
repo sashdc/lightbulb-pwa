@@ -40,28 +40,36 @@ function Gallery({ photos, title, backLink }) {
         {title}
       </h1>
       <div className="lg:p-6 p-2 pb-0 pt-0 lg:pb-0 animate-in fade-in duration-1000 ">
-        <PhotoAlbum
-          layout="columns"
-          photos={shuffledPhotos}
-          targetRowHeight={150}
-          onClick={({ index: current }) => setIndex(current)}
-          renderPhoto={({ photo, layout, imageProps }) => (
-            <div style={{ position: "relative" }}>
-              <img {...imageProps} />
-              <div style={{ position: "absolute", top: "10px", right: "10px" }}>
-                <Favourite photo={photo} />
-              </div>
-            </div>
-          )}
-        />
-        <Lightbox
-          index={index}
-          plugins={[Captions, Share]}
-          captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
-          slides={slides}
-          open={index >= 0}
-          close={() => setIndex(-1)}
-        />
+        {shuffledPhotos.length === 0 ? (
+          <div className={`${dosis.className} text-center text-3xl font-bold`}>
+            No images here yet.
+          </div>
+        ) : (
+          <>
+            <PhotoAlbum
+              layout="columns"
+              photos={shuffledPhotos}
+              targetRowHeight={150}
+              onClick={({ index: current }) => setIndex(current)}
+              renderPhoto={({ photo, layout, imageProps }) => (
+                <div style={{ position: "relative" }}>
+                  <img {...imageProps} />
+                  <div style={{ position: "absolute", top: "10px", right: "10px" }}>
+                    <Favourite photo={photo} />
+                  </div>
+                </div>
+              )}
+            />
+            <Lightbox
+              index={index}
+              plugins={[Captions, Share]}
+              captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
+              slides={slides}
+              open={index >= 0}
+              close={() => setIndex(-1)}
+            />
+          </>
+        )}
         <BackButton2 backLocation={backLink} />
       </div>
     </div>
