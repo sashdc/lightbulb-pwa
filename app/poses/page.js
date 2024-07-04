@@ -15,6 +15,7 @@ export default function Poses() {
 
         <Tile imageUrl="/images/family.webp" title="FAMILY" link="/family" />
         <Tile imageUrl="/images/saved.webp" title="FAVOURITES" link="/favourites" />
+        <Tile imageUrl="/images/sessions.webp" title="SESSIONS" link="/sessions" />
 
         {/* <Tile imageUrl="/images/boudoir.webp" title="BOUDOIR" link="/boudoir" /> */}
       </div>

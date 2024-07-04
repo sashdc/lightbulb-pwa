@@ -13,13 +13,8 @@ const Favourite = ({ photo }) => {
     console.log(favourites.length)
     if (isFavourite) {
       favourites = favourites.filter(fav => fav.src !== photo.src);
-      console.log("Removed from favourites", photo);
-      console.log(favourites.length)
     } else {
       favourites.push(photo);
-      console.log("Added to favourites", photo);
-      console.log(favourites.length)
-
     }
 
     localStorage.setItem('favourites', JSON.stringify(favourites));
@@ -27,7 +22,7 @@ const Favourite = ({ photo }) => {
   };
 
   return (
-    <div onClick={toggleFavourite} style={{ cursor: 'pointer' }}>
+    <div onClick={toggleFavourite} style={{ cursor: 'pointer' }} className="hover:scale-125 active:scale-75 duration-100">
       {isFavourite ? '❤️' : '🤍'}
     </div>
   );
