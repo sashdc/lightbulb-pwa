@@ -22,7 +22,7 @@ const Favourite = ({ photo }) => {
   };
 
   return (
-    <div onClick={toggleFavourite} style={{ cursor: 'pointer' }} className="hover:scale-125 active:scale-75 duration-100">
+    <div onClick={toggleFavourite} style={{ cursor: 'pointer' }} className="scale-125 hover:scale-150 active:scale-75 duration-100">
       {isFavourite ? '❤️' : '🤍'}
     </div>
   );

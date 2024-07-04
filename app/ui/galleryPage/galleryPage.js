@@ -1,4 +1,4 @@
-'use client'; 
+"use client";
 
 import * as React from "react";
 import PhotoAlbum from "react-photo-album";
@@ -26,7 +26,8 @@ function Gallery({ photos, title, backLink }) {
   }, [photos]);
 
   React.useEffect(() => {
-    const storedCategories = JSON.parse(localStorage.getItem("categories")) || [];
+    const storedCategories =
+      JSON.parse(localStorage.getItem("categories")) || [];
     setCategories(storedCategories);
   }, []);
 
@@ -46,7 +47,9 @@ function Gallery({ photos, title, backLink }) {
 
   const handleSaveCategory = (category) => {
     const updatedCategories = [...categories];
-    let categoryIndex = updatedCategories.findIndex((cat) => cat.name === category);
+    let categoryIndex = updatedCategories.findIndex(
+      (cat) => cat.name === category
+    );
 
     if (categoryIndex === -1) {
       updatedCategories.push({ name: category, photos: [selectedPhoto] });
@@ -59,15 +62,19 @@ function Gallery({ photos, title, backLink }) {
   };
 
   const handleRemoveCategory = (category) => {
-    const updatedCategories = categories.map((cat) => {
-      if (cat.name === category) {
-        return {
-          ...cat,
-          photos: cat.photos.filter((photo) => photo.src !== selectedPhoto.src),
-        };
-      }
-      return cat;
-    }).filter(cat => cat.photos.length > 0);
+    const updatedCategories = categories
+      .map((cat) => {
+        if (cat.name === category) {
+          return {
+            ...cat,
+            photos: cat.photos.filter(
+              (photo) => photo.src !== selectedPhoto.src
+            ),
+          };
+        }
+        return cat;
+      })
+      .filter((cat) => cat.photos.length > 0);
 
     setCategories(updatedCategories);
     localStorage.setItem("categories", JSON.stringify(updatedCategories));
@@ -98,15 +105,21 @@ function Gallery({ photos, title, backLink }) {
               renderPhoto={({ photo, layout, imageProps }) => (
                 <div style={{ position: "relative" }}>
                   <img {...imageProps} />
-                  <div style={{ position: "absolute", top: "10px", right: "10px" }}>
+                  <div
+                    style={{ position: "absolute", top: "7px", right: "7px" }}
+                  >
                     <Favourite photo={photo} />
                   </div>
-                  <div style={{ position: "absolute", top: "5px", left: "5px" }}>
+                  <div
+                    style={{ position: "absolute", top: "0px", left: "0px" }}
+                  >
                     <button
                       onClick={() => handleAddToCategory(photo)}
-                      className="bg-gray-500 text-white text-bold rounded-full p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50"
+                      className="bg-gray-700 text-white text-bold rounded-br-lg
+
+ p-2 hover:bg-slate-300 hover:font-bold hover:text-gray-700 active:bg-gray-700 active:font-bold active:text-slate-50 duration-100"
                     >
-                     +
+                      +
                     </button>
                   </div>
                 </div>
@@ -115,7 +128,11 @@ function Gallery({ photos, title, backLink }) {
             <Lightbox
               index={index}
               plugins={[Captions, Share]}
-              captions={{ showToggle: false, descriptionTextAlign: "center", descriptionMaxLines: 6 }}
+              captions={{
+                showToggle: false,
+                descriptionTextAlign: "center",
+                descriptionMaxLines: 6,
+              }}
               slides={slides}
               open={index >= 0}
               close={() => setIndex(-1)}
@@ -128,8 +145,12 @@ function Gallery({ photos, title, backLink }) {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         onSave={handleSaveCategory}
-        existingCategories={categories.map(category => category.name)}
-        selectedPhotoCategories={categories.filter(category => category.photos.some(photo => photo.src === selectedPhoto?.src)).map(category => category.name)}
+        existingCategories={categories.map((category) => category.name)}
+        selectedPhotoCategories={categories
+          .filter((category) =>
+            category.photos.some((photo) => photo.src === selectedPhoto?.src)
+          )
+          .map((category) => category.name)}
         onRemove={handleRemoveCategory}
       />
     </div>
