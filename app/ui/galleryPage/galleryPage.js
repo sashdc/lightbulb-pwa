@@ -16,13 +16,14 @@ import Modal from "../modal/modal";
 
 function Gallery({ photos, title, backLink }) {
   const [index, setIndex] = React.useState(-1);
-  const [shuffledPhotos, setShuffledPhotos] = React.useState(photos);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selectedPhoto, setSelectedPhoto] = React.useState(null);
   const [categories, setCategories] = React.useState([]);
-  const showToggle = false;
-  const descriptionTextAlign = "center";
-  const descriptionMaxLines = 6;
+  const [shuffledPhotos, setShuffledPhotos] = React.useState([]);
+
+  React.useEffect(() => {
+    setShuffledPhotos(photos); // Initialize shuffledPhotos with photos on mount or update
+  }, [photos]);
 
   React.useEffect(() => {
     const storedCategories = JSON.parse(localStorage.getItem("categories")) || [];
@@ -58,9 +59,12 @@ function Gallery({ photos, title, backLink }) {
   };
 
   const handleRemoveCategory = (category) => {
-    const updatedCategories = categories.map(cat => {
+    const updatedCategories = categories.map((cat) => {
       if (cat.name === category) {
-        return { ...cat, photos: cat.photos.filter(photo => photo.src !== selectedPhoto.src) };
+        return {
+          ...cat,
+          photos: cat.photos.filter((photo) => photo.src !== selectedPhoto.src),
+        };
       }
       return cat;
     }).filter(cat => cat.photos.length > 0);
@@ -111,7 +115,7 @@ function Gallery({ photos, title, backLink }) {
             <Lightbox
               index={index}
               plugins={[Captions, Share]}
-              captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
+              captions={{ showToggle: false, descriptionTextAlign: "center", descriptionMaxLines: 6 }}
               slides={slides}
               open={index >= 0}
               close={() => setIndex(-1)}

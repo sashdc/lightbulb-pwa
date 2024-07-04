@@ -25,7 +25,7 @@ export default function Sessions() {
             key={index}
             imageUrl={getRandomImage(category.photos)}
             title={category.name}
-            link={`/session/${category.name}`}
+            link={`/sessions/${category.name}`}
           />
         ))}
       </div>
