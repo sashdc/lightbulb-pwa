@@ -115,9 +115,7 @@ function Gallery({ photos, title, backLink }) {
                   >
                     <button
                       onClick={() => handleAddToCategory(photo)}
-                      className="bg-gray-700 text-white text-bold rounded-br-lg
-
- p-2 hover:bg-slate-300 hover:font-bold hover:text-gray-700 active:bg-gray-700 active:font-bold active:text-slate-50 duration-100"
+                      className="bg-gray-700 text-white font-black rounded-br-lg p-2 pt-1 hover:bg-slate-300 hover:font-extrabold hover:text-gray-700 active:bg-gray-700 active:font-bold active:text-slate-50 duration-100"
                     >
                       +
                     </button>
