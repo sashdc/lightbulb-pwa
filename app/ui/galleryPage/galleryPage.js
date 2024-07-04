@@ -1,4 +1,4 @@
-"use client";
+'use client'; 
 
 import * as React from "react";
 import PhotoAlbum from "react-photo-album";
@@ -57,6 +57,18 @@ function Gallery({ photos, title, backLink }) {
     localStorage.setItem("categories", JSON.stringify(updatedCategories));
   };
 
+  const handleRemoveCategory = (category) => {
+    const updatedCategories = categories.map(cat => {
+      if (cat.name === category) {
+        return { ...cat, photos: cat.photos.filter(photo => photo.src !== selectedPhoto.src) };
+      }
+      return cat;
+    }).filter(cat => cat.photos.length > 0);
+
+    setCategories(updatedCategories);
+    localStorage.setItem("categories", JSON.stringify(updatedCategories));
+  };
+
   return (
     <div className="flex flex-col items-center justify-center p-4 pb-0 pt-1 lg:pt-3">
       <RandomizeButton photos={photos} setShuffledPhotos={setShuffledPhotos} />
@@ -88,7 +100,7 @@ function Gallery({ photos, title, backLink }) {
                   <div style={{ position: "absolute", top: "5px", left: "5px" }}>
                     <button
                       onClick={() => handleAddToCategory(photo)}
-                      className="bg-gray-500 text-white text-bold rounded-full p-2"
+                      className="bg-gray-500 text-white text-bold rounded-full p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50"
                     >
                      +
                     </button>
@@ -113,6 +125,8 @@ function Gallery({ photos, title, backLink }) {
         onClose={() => setModalOpen(false)}
         onSave={handleSaveCategory}
         existingCategories={categories.map(category => category.name)}
+        selectedPhotoCategories={categories.filter(category => category.photos.some(photo => photo.src === selectedPhoto?.src)).map(category => category.name)}
+        onRemove={handleRemoveCategory}
       />
     </div>
   );

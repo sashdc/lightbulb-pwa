@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Modal({ isOpen, onClose, onSave, existingCategories }) {
+function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCategories, onRemove }) {
   const [newCategory, setNewCategory] = React.useState("");
 
   if (!isOpen) return null;
@@ -27,7 +27,11 @@ function Modal({ isOpen, onClose, onSave, existingCategories }) {
           >
             <option value="">Select an existing shoot</option>
             {existingCategories.map((category, index) => (
-              <option key={index} value={category}>
+              <option
+                key={index}
+                value={category}
+                disabled={selectedPhotoCategories.includes(category)}
+              >
                 {category}
               </option>
             ))}
@@ -58,6 +62,24 @@ function Modal({ isOpen, onClose, onSave, existingCategories }) {
             Save
           </button>
         </div>
+        {selectedPhotoCategories.length > 0 && (
+          <div className="mt-4">
+            <h3 className="text-lg font-medium text-gray-700">Already in Sessions:</h3>
+            <ul className="list-disc list-inside">
+              {selectedPhotoCategories.map((category, index) => (
+                <li key={index} className="flex justify-between items-center text-gray-700 bg-gray-300 p-2 mb-1 font-bold rounded-lg">
+                  {category}
+                  <button
+                    onClick={() => onRemove(category)}
+                    className="ml-2 bg-red-500 text-white text-xs rounded-full p-2 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-opacity-50"
+                  >
+                    X
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
