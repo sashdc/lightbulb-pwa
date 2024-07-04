@@ -14,7 +14,7 @@ function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCateg
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 animate-in fade-in duration-300">
       <div className="bg-white p-4 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-4 text-black">Add to Session</h2>
         <div>

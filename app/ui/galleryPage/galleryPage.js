@@ -106,7 +106,7 @@ function Gallery({ photos, title, backLink }) {
                 <div style={{ position: "relative" }}>
                   <img {...imageProps} />
                   <div
-                    style={{ position: "absolute", top: "7px", right: "7px" }}
+                    style={{ position: "absolute", top: "4px", right: "7px" }}
                   >
                     <Favourite photo={photo} />
                   </div>

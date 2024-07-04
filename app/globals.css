@@ -62,7 +62,7 @@ body {
 .react-photo-album--photo:hover{
   /* transform: scale(1.025); */
   /* border-radius: 20px; */
-  outline: #6b7280 solid 8px;
+  outline: #374151 solid 8px;
   outline-offset: -8px;
   transition: ease-in-out 0.2s;
 
