@@ -1,22 +1,52 @@
 import * as React from "react";
+import { dosis } from "../../fonts";
+
 
 function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCategories, onRemove }) {
   const [newCategory, setNewCategory] = React.useState("");
+  const modalRef = React.useRef();
 
-  if (!isOpen) return null;
+  React.useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      } else if (event.key === "Enter") {
+        handleAdd();
+      }
+    };
 
-  const handleSave = () => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [newCategory]);
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleAdd = () => {
     if (newCategory) {
       onSave(newCategory);
     }
     setNewCategory("");
-    onClose();
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 animate-in fade-in duration-300">
-      <div className="bg-white p-4 rounded-lg shadow-lg">
-        <h2 className="text-xl font-bold mb-4 text-black">Add to Session</h2>
+    <div className={`${dosis.className} fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 animate-in fade-in duration-300`}>
+      <div ref={modalRef} className="bg-white p-4 rounded-lg shadow-lg">
+        <h2 className="text-xl font-bold mb-4 text-black">Add to Session(s)</h2>
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Select an existing shoot{" "}
@@ -53,13 +83,13 @@ function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCateg
             className="mr-2 bg-gray-500 text-white px-4 py-2 rounded-md"
             onClick={onClose}
           >
-            Cancel
+            Exit
           </button>
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded-md"
-            onClick={handleSave}
+            onClick={handleAdd}
           >
-            Save
+            Add
           </button>
         </div>
         {selectedPhotoCategories.length > 0 && (
