@@ -3,7 +3,9 @@
 import * as React from "react";
 import BackButton from "../ui/backbutton/backbutton2";
 import Tile from "../ui/menuTile/menuTile";
-import Link from 'next/link'; // Ensure you have this import for Link component
+import Link from 'next/link'; 
+import { dosis } from "../fonts";
+
 
 export default function Sessions() {
   const [categories, setCategories] = React.useState([]);
@@ -28,7 +30,7 @@ export default function Sessions() {
         setCategories(updatedCategories);
         localStorage.setItem("categories", JSON.stringify(updatedCategories));
         setRemovingIndex(null);
-      }, 300); // Delay to allow animation to play
+      }, 100); 
     }
   };
 
@@ -36,9 +38,9 @@ export default function Sessions() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-0">
       {categories.length === 0 ? (
         <Link href="/poses">
-          <p2 className="text-center text-blue-500 hover:underline">
+          <div className={`${dosis.className} text-center bg-slate-500 p-5 rounded-full text-slate-100 font-bold text-3xl shadow-md hover:text-slate-500 hover:bg-slate-100 hover:shadow-2xl duration-500`}>
             Seems you haven't created any sessions yet, you should get on that.
-          </p2>
+          </div>
         </Link>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-screen-lg">
