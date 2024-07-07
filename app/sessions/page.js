@@ -39,7 +39,7 @@ export default function Sessions() {
       {categories.length === 0 ? (
         <Link href="/poses">
           <div className={`${dosis.className} text-center bg-slate-500 p-5 rounded-full text-slate-100 font-bold text-3xl shadow-md hover:text-slate-500 hover:bg-slate-100 hover:shadow-2xl duration-500`}>
-            Seems you haven't created any sessions yet, you should get on that.
+            Seems you haven&apos;t created any sessions yet, you should get on that.
           </div>
         </Link>
       ) : (
