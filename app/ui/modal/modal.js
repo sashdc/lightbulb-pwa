@@ -1,25 +1,24 @@
 import * as React from "react";
 import { dosis } from "../../fonts";
 
-
 function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCategories, onRemove }) {
   const [newCategory, setNewCategory] = React.useState("");
   const modalRef = React.useRef();
 
-  React.useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      } else if (event.key === "Enter") {
-        handleAdd();
-      }
-    };
+  const handleAdd = () => {
+    if (newCategory) {
+      onSave(newCategory);
+    }
+    setNewCategory("");
+  };
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [newCategory]);
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      onClose();
+    } else if (event.key === "Enter") {
+      handleAdd();
+    }
+  };
 
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -28,18 +27,18 @@ function Modal({ isOpen, onClose, onSave, existingCategories, selectedPhotoCateg
   };
 
   React.useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleAdd, onClose]);
+
+  React.useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
-
-  const handleAdd = () => {
-    if (newCategory) {
-      onSave(newCategory);
-    }
-    setNewCategory("");
-  };
+  }, [handleClickOutside]);
 
   if (!isOpen) return null;
 
