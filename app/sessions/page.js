@@ -35,7 +35,7 @@ export default function Sessions() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-0">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-0 animate-in fade-in duration-500">
       {categories.length === 0 ? (
         <Link href="/poses">
           <div className={`${dosis.className} text-center bg-slate-500 p-5 rounded-full text-slate-100 font-bold text-3xl shadow-md hover:text-slate-500 hover:bg-slate-100 hover:shadow-2xl duration-500`}>
