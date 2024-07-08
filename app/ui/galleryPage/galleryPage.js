@@ -22,7 +22,7 @@ function Gallery({ photos, title, backLink }) {
   const [shuffledPhotos, setShuffledPhotos] = React.useState([]);
 
   React.useEffect(() => {
-    setShuffledPhotos(photos); // Initialize shuffledPhotos with photos on mount or update
+    setShuffledPhotos(photos);
   }, [photos]);
 
   React.useEffect(() => {
@@ -115,9 +115,20 @@ function Gallery({ photos, title, backLink }) {
                   >
                     <button
                       onClick={() => handleAddToCategory(photo)}
-                      className="bg-gray-700 text-white font-black rounded-br-lg p-2 pt-1 hover:bg-slate-300 hover:font-extrabold hover:text-gray-700 active:bg-gray-700 active:font-bold active:text-slate-50 duration-100"
+                      className="bg-gray-700 text-white font-black rounded-br-lg p-1 hover:bg-slate-300 hover:font-extrabold hover:text-gray-700 active:bg-gray-700 active:font-bold active:text-slate-50 duration-100"
                     >
-                      +
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
                     </button>
                   </div>
                 </div>
