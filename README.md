@@ -1,6 +1,8 @@
 # Lightbulb - Posing Guide for Photographers
 
-Welcome to **Lightbulb**, an innovative posing guide app designed to assist photographers in capturing the perfect shot for weddings, engagements, family portraits, and boudoir shoots. Built with Next.js, Lightbulb offers a comprehensive set of tools and inspirations to elevate your photography sessions.
+Welcome to **Lightbulb**, an innovative posing guide app designed to assist photographers in capturing the perfect shot for weddings, engagements, family portraits, and boudoir shoots. Built with Next.js, Lightbulb offers a comprehensive set of tools and inspirations to elevate your photography sessions. Lightbulb is a Progressive Web App (PWA) that can be installed on your devices for easy access.
+
+![Home Page](./public/images/screenshot3.webp)
 
 ## Features
 
@@ -9,39 +11,32 @@ Welcome to **Lightbulb**, an innovative posing guide app designed to assist phot
 - **Visual Inspirations**: High-quality images for each pose to give you a clear visual reference.
 - **User-Friendly Interface**: Intuitive design ensuring smooth navigation and ease of use.
 - **Favorites**: Save your favorite poses for quick access during shoots.
+- **Dynamic Sessions**: Create dynamic sessions to organize your poses.
 - **Offline Access**: Download poses and use the app even without an internet connection.
 
 ## Installation
 
 To get started with Lightbulb, follow these steps:
 
-1. **Clone the repository**:
+1. **Navigate to the site**:
     ```sh
-    git clone https://github.com/sashdc/lightbulb.git
+    https://lightbulb-photo.netlify.app/
     ```
 
-2. **Navigate to the project directory**:
-    ```sh
-    cd lightbulb
-    ```
+2. **Follow the Install prompt on any device or use the app as a site**
+ 
 
-3. **Install the dependencies**:
-    ```sh
-    npm install
-    ```
-
-4. **Run the development server**:
-    ```sh
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
 ## Usage
 
 1. **Select a Category**: Choose from weddings, engagements, family portraits, or boudoir shoots.
 2. **Browse Poses**: Scroll through the list of poses, each with detailed descriptions and images.
-3. **Mark Favorites**: Click the star icon to save poses for easy access later.
-4. **Offline Access**: Download poses to use them without an internet connection.
+3. **Mark Favorites**: Click the heart icon to save poses for easy access later.
+4. **Create Sessions**: Create sessions and add images to them for easy reference during a shoot.
+5. **Offline Access**: Download poses to use them without an internet connection.
+
+![Menu Page](./public/images/screenshot2.webp)
+![Gallery Page](./public/images/screenshot1.webp)
 
 ## Contributing
 
