@@ -14,7 +14,7 @@ export default function FavouritesGallery() {
       <Gallery
         photos={favourites}
         title="Favourite Poses"
-        backLink="/poses"
+        backLink="/home"
       />
     );
 }

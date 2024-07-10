@@ -76,7 +76,7 @@ export default function Sessions() {
           ))}
         </div>
       )}
-      <BackButton backLocation="/poses" />
+      <BackButton backLocation="/home" />
     </div>
   );
 }
