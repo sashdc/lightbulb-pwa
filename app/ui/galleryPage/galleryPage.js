@@ -103,6 +103,11 @@ function Gallery({ photos, title, backLink }) {
           <>
             <PhotoAlbum
               layout="columns"
+              columns={(containerWidth) => {
+                if (containerWidth < 600) return 2;
+                if (containerWidth < 800) return 3;
+                return 4;
+              }}
               photos={shuffledPhotos}
               targetRowHeight={150}
               onClick={({ index: current }) => setIndex(current)}
