@@ -20,9 +20,11 @@ function Gallery({ photos, title, backLink }) {
   const [selectedPhoto, setSelectedPhoto] = React.useState(null);
   const [categories, setCategories] = React.useState([]);
   const [shuffledPhotos, setShuffledPhotos] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     setShuffledPhotos(photos);
+    setLoading(false);
   }, [photos]);
 
   React.useEffect(() => {
@@ -91,7 +93,9 @@ function Gallery({ photos, title, backLink }) {
         {title}
       </h1>
       <div className="lg:p-6 p-2 pb-0 pt-0 lg:pb-0 animate-in fade-in duration-1000 ">
-        {shuffledPhotos.length === 0 ? (
+        {loading ? (
+          <div className="loading-animation">Loading...</div>
+        ) : shuffledPhotos.length === 0 ? (
           <div className={`${dosis.className} text-center text-3xl font-bold`}>
             No images here yet.
           </div>
@@ -104,7 +108,7 @@ function Gallery({ photos, title, backLink }) {
               onClick={({ index: current }) => setIndex(current)}
               renderPhoto={({ photo, layout, imageProps }) => (
                 <div style={{ position: "relative" }}>
-                  <img {...imageProps} />
+                  <img {...imageProps} onLoad={() => setLoading(false)} />
                   <div
                     style={{ position: "absolute", top: "4px", right: "7px" }}
                   >
