@@ -4,6 +4,15 @@ Welcome to **Lightbulb**, an innovative posing guide app designed to assist phot
 
 ![Home Page](./public/images/screenshot3.webp)
 
+## Built With
+
+- **Next.js**: The React Framework for Production.
+- **React**: A JavaScript library for building user interfaces.
+- **Progressive Web App (PWA)**: Ensures the app can be installed on devices and used offline.
+- **Netlify**: Used for deployment and hosting.
+- **Yet Another React Lightbox**: Provides the lightbox for images
+- **React Photo Album**: Provides the masonry grid photo album
+
 ## Features
 
 - **Posing Categories**: Easily navigate through various categories including weddings, engagements, family portraits, and boudoir shoots.
@@ -24,8 +33,6 @@ To get started with Lightbulb, follow these steps:
     ```
 
 2. **Follow the Install prompt on any device or use the app as a site**
- 
-
 
 ## Usage
 
