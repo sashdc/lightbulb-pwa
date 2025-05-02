@@ -715,8 +715,8 @@ export const engagementPhotos = [
   {
     title: "Engagement 90",
     src: "/images/engagement/engagement90.webp",
-    width: 750,
-    height: 500,
+    width: 500,
+    height: 750,
     alt: "Engagement 90",
     description: "Engagement 90",
   },
@@ -835,8 +835,8 @@ export const engagementPhotos = [
   {
     title: "Engagement 105",
     src: "/images/engagement/engagement105.webp",
-    width: 750,
-    height: 500,
+    width: 500,
+    height: 750,
     alt: "Engagement 105",
     description: "Engagement 105",
   },
